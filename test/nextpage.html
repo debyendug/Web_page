@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Well Come</title>
+</head>
+
+<body>
+    <nav class=" a navbar navbar-default navbar-inverse  ">
+        <div class="navbar-header ">
+            <a href="#" class="navbar-brand " id="up">Profile</a>
+        </div>
+
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" onclick="togglePopup2()"> <a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" onclick="togglePopup1()"> <a href="#">LogIn</a></li>
+        </ul>
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" id="sign" onclick="togglePopup()"> <a href="#">SignUp</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Well Come to your profile</h3>
+
+            <form action="nextprofilephp.php" class="frm" id="fmsb" method="POST">
+
+                <h2 id="rg">Profile</h2>
+
+                <div class="form-group">
+                    <label for="name" id="text1">First Name</label>
+                    <input type="text" name="fast" class="form-control" placeholder="First Name" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="last" id="text2">Last Name</label>
+                    <input type="text" name="last" class="form-control" placeholder="Last Name" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email" id="text4">Email Id  </label>
+                    <input type="text" name="emali" class="form-control ph" placeholder="Email Id " required>
+
+                </div>
+                <div class="form-group">
+                    <label for="email" id="ph1">Phone_No  </label>
+                    <input type="text" name="phno" class="form-control ph" placeholder="Phone number " required pattern="[6-9]{1}[0-9]{9}">
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="dob" id="text6">DOB</label>
+                    <input type="date" id="date" name="dateofbirth" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Male</label>
+                    <input type="radio" id="m" name="gender"> <br>
+                    <label for="gender">Female</label>
+                    <input type="radio" id="f" name="gender">
+                </div>
+
+                <div class="form-group">
+                    <label class="header">Profile Photo:</label>
+                    <input id="image" type="file" name="profile_photo" placeholder="Photo" required capture>
+                </div>
+
+
+                <button type="submit" id="submit" name="submit"> Submit </button>
+
+
+
+            </form>
+        </div>
+
+
+    </div>
+
+
+    <!-- </div> -->
+
+    <!-- End profilee creaation -->
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var form = $('#fmsb');
+            $('#submit').click(function() {
+                $.ajax({
+                    url: form.attr("action"),
+                    type: 'post',
+                    data: $("#fmsb input").serialize(),
+
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB_PAGE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="Scss_folder/popup.scss">
+</head>
+
+<body class="bd">
+
+    <nav class=" a navbar navbar-default navbar-inverse  ">
+        <div class="navbar-header ">
+            <a href="#" class="navbar-brand " id="up">WellCome</a>
+        </div>
+        <!-- <ul class="nav navbar-nav">
+            <li class="up"><a href="file:///C:/Users/SAYAN/Desktop/Basic%20HTMLfrm%20udemy/anirban/anirfasttryweb.html#"> COVID DATA </a></li>
+        </ul>-->
+
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" onclick="togglePopup2()"> <a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" onclick="togglePopup1()"> <a href="#">LogIn</a></li>
+        </ul>
+        <ul class="nav navbar-nav  navbar navbar-right">
+            <li class="right" id="sign" onclick="togglePopup()"> <a href="#">SignUp</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="p">Well come to our family</h1>
+            <h2 id="p1">In this family you can see lots of things</h2>
+            <p>you just need to sign up for registration </p>
+        </div>
+    </div>
+
+    <!-- SIGN UP POPUP START -->
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+
+            <!-- for closing boutn html entity is &times-->
+            <div class="close-btn" onclick="togglePopup()">&times; </div>
+
+            <form action="submitphp.php" class="frm" id="fmsb" method="POST">
+
+                <h2 id="rg">Registar Here</h2>
+
+                <div class="form-group">
+                    <label for="name" id="text1">First Name</label>
+                    <input type="text" name="fsname" class="form-control" placeholder="First Name" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="name" id="text2">Last Name</label>
+                    <input type="text" name="lsname" class="form-control" placeholder="Last Name" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email" id="text4">Email Id or Phone_No </label>
+                    <input type="text" name="emali" class="form-control ph" placeholder="Email Id or Phone_No" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="pswrd" id="text5">Password</label>
+                    <input type="password" name="paswrd" id="paswd" class="form-control psd" placeholder="Password" pattern=".{5,10}" required title="Password should be within 5 to 10 and special char lik @,#">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="repaswrd" id="text6">Re-Enter</label>
+                    <input type="password" id="repaswrd" name="repaswrd" class="form-control repsd" placeholder="Re-enter password" , required checked="pswrd">
+
+                </div>
+
+                <div class="forget">
+                    <label for="">Already have an account!</label><br>
+                    <label for="forget">Click</label>
+                    <a href="#" id="lg" onclick="togglePopup1()">LogIn</a>
+
+                </div>
+
+                <button type="submit" id="bt" name="submit" onclick="validation()"> Submit </button>
+
+
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- SIGN UP POPUP END -->
+
+    <!-- LOGIN POPUP STARTED -->
+    <div class="popup1" id="popup-2">
+        <div class="overlay1"></div>
+        <div class="content1">
+
+            <!-- for closing boutn html entity is &times-->
+            <div class="close-btn" onclick="togglePopup1()">&times; </div>
+
+            <form action="#" class="frm1" method="POST">
+
+                <h2 id="rg2">LogIn Here</h2>
+
+                <div class="form-group">
+                    <label for="email" id="eml">Email Id or Phone_No </label>
+                    <input type="#" name="emali" class="form-control" placeholder="Email Id or Phone_No" required>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="pswrd" id="psd">Password</label>
+                    <input type="password" name="pswrd" class="form-control" placeholder="Password" required>
+
+                </div>
+                <button type="submit" id="bt1">LogIn</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN POPUP ENDED -->
+
+
+    <!-- CONTACT POPUP   -->
+    <div class="popup2" id="popup-3">
+        <div class="overlay2"></div>
+        <div class="content2">
+
+            <div class="close-btn" onclick="togglePopup2()">&times; </div>
+            <h1 id="hd">Contect Details</h1>
+            <h3 id="hd1">If there is any problem contect with us 24*7 service </h3>
+            <p id="pp">You can call on this number</p>
+            <h2>8017847241</h2>
+            <p>
+                or You can mail on us! </p>
+            <p id="pp1"> <a href="https://www.gmail.com"> debyendughosh@gmail.com </a> </p>
+
+        </div>
+    </div>
+
+
+    <!-- COVID DATA POPUP 
+
+
+    <div class="popup3" id="popup-4">
+        <div class="overlay3"></div>
+        <div class="content3">
+
+            <div class="close-btn" onclick="togglePopup3()">&times; </div>
+
+            <h3 class="ord1"> <a href="anir.pdf">just click and see a Covid PDF</a></h3>
+
+            <footer>Created by ANIRBAN DAS</footer>
+
+        </div>
+    </div> -->
+
+    <script src="popup.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var form = $('#fmsb');
+            $('#submit').click(function() {
+                $.ajax({
+                    url: form.attr("action"),
+                    type: 'post',
+                    data: $("#fmsb input").serialize(),
+
+                    success: function(data) {
+                        console.log(data);
+                    }
+                })
+
+            });
+        });
+    
+    </script>
+</body>
+
+</html>
